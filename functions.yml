@@ -1,0 +1,7 @@
+newExemple:
+  handler: lambdas/exemple.newExemple
+  name: ${self:service}-${self:provider.stage}-new-user
+  events:
+    - httpApi:
+        path: /users/create
+        method: post

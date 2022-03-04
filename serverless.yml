@@ -1,0 +1,16 @@
+service: evocondo-cognito
+
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: python3.9
+  stage: ${opt:stage, 'dev'}
+  region: us-west-2
+
+functions:
+ - ${file(functions.yml)}
+
+resources:
+  #  resource
+  - ${file(resources/exemple-resource.yml)}
